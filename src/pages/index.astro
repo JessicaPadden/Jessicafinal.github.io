@@ -1,0 +1,505 @@
+---
+
+const my_array =["1st of January "];
+const img=["images/Final.png"];
+
+const age= ["30"];
+
+// API //
+const API_URL = "http://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline";
+const response = await fetch(API_URL);
+const products= await response.json();
+
+
+//importing all styles//
+import "../styles/style.css";
+
+
+
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+        <meta name="description" content=description />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--this project is based on astro file with html, css, js and bootstrap for the UCD assessment -->
+		<meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!--main image will be final.png to display logo and brand image this is based in the public folder and created by Jessica Padden -->
+    <meta property= "{Image}" content="images/Final.png" />
+    <!--naming the title to Surface so it can be identified -->
+      <title>SurFACE</title>
+
+    <!-- linking css -->
+     <link rel="stylesheet" href="../styles/style.css">
+    
+ 
+
+
+    <!--remixicons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/brands.min.css">
+
+  
+      <!--font awesome link for icons -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+    
+     <!-- surface js -->
+     <script src="../layouts/surface.js"></script>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+     
+    </head>
+<body>
+
+  <!-- BOOTSTRAP 5 MODIFYING -->
+   <nav class="navbar navbar-expand-md navbar-dark bg-dark" style="background-color:rgb(230, 75, 209);" >
+  <div class="container-fluid">
+     <a class="navbar-brand" href="#">
+      <img src="../images/Final.png" alt="Logo" width="30" height="auto" class="d-inline-block align-text-top">SurFACE</a>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-label="Expanding Navbar"> <span class="narbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+<li class="navbar-item">
+<a class="nav-link active" aria-current="page" href="#">Home</a>
+</li>
+          <li class="nav-item">
+          <a class="nav-link" href="#Products">Products<i class="fa-solid fa-gift" style="color: #ffffff;"></i></a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#About">About <i class="fa-solid fa-circle-info" style="color: #ffffff;"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#Contact">Contact<i class="fa-solid fa-phone" style="color: #ffffff;"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#Reviews">Reviews<i class="fa-solid fa-star" style="color: #ffffff;"></i></a>
+        </li>
+      </ul>
+      </div>
+    </nav>
+
+<!-- end of navbar -->
+
+
+
+
+  <!----main hero page -->
+  <section id="main page ">
+    <!--main text -->
+    <div class="main conatiner-fluid mt-2 px-3">
+  <div class="main-page-text">
+    <h1> Welcome to the
+      <span>SurFACE</span></h1>
+  <span>New Beauty Brand</span>
+  <p>We are an animal cruelty free and vegan beauty company based in Co. Mayo.
+</p>
+   
+    <span> Our mission</span>
+    <p> to make you feel beautiful in your own skin and this is how we got the inspiration from the brand name The SurFACE.
+    We have a range of new and upcoming beauty products and skin care products for all skin types!</p>
+
+ <button type="button"
+onclick="document.getElementById('Launch date').innerHTML = new Date('January 1, 2026');">
+        <p>Click for Launch date </button>
+        <p id="Launch date"></p></div>
+ 
+  </section>
+
+
+
+ <!-- BOOTSRAP MODIFYING AS THE LAUNCH DATE IS NOT REPOSNIVE ON CSS ALONE WITH CHANGES AND ADJUSTMENTS -->
+  <div class="time-container-fluid ">Launching Soon!
+    <div class="launch-time">
+    <div>
+    <p id="days">00</p>
+    <span> Days</span>
+  </div>
+    <div>
+    <p id="hours">00</p>
+    <span> Hours</span>
+  </div>
+    <div>
+    <p id="minutes">00</p>
+    <span> Minutes</span>
+  </div>
+    <div>
+    <p id="seconds">00</p>
+    <span> Seconds</span>
+  </div>
+</div>
+<script>
+var countDownDate= new Date("Jan 1, 2026  00:00:00").getTime();
+var x = setInterval(function(){
+  var now = new Date().getTime();
+  var distance= countDownDate - now;
+
+
+  var days= Math.floor (distance / (1000 *60 *60 *24));
+  var hours= Math.floor ((distance % (1000 *60 *60 *24)) / (1000 *60 *60));
+  var minutes=Math.floor ((distance % (1000 *60 *60)) / (1000 *60));
+  var seconds= Math.floor ((distance % (1000 *60)) /1000);
+
+const el = document.getElementById("days").innerHTML = days;
+   document.getElementById("hours").innerHTML = hours;
+    document.getElementById("minutes").innerHTML = minutes;
+     document.getElementById("seconds").innerHTML = seconds;
+
+
+     if(distance <0){
+      clearInterval(x);
+  document.getElementById("days").innerHTML = 00;
+   document.getElementById("hours").innerHTML = 00;
+    document.getElementById("minutes").innerHTML = 00;
+     document.getElementById("seconds").innerHTML = 00;
+
+
+     }
+
+
+},1000);
+  </script>
+</div>
+  </div>
+
+  <!--restyling product card to make them responsive-->
+   <section id="Products">
+    <h1> Products</h1>
+    <div class="product-container">
+      <!-- p1-->
+      <div class= "product-card">
+ <img src="../public/images/skincare.png"/>
+ <div class="product-content">
+    <h3>Skin Serum</h3>
+    <p> Upcoming prices €15 / £12</p>
+ </div>
+</div>
+      <!-- p2-->
+   <div class= "product-card">
+  <img src="../public/images/lipstick.png"/>
+ <div class="product-content">
+    <h3>Lipstick</h3>
+    <p> Upcoming prices €15 / £12</p>
+   
+ </div>
+</div>
+      <!-- p3-->
+   <div class= "product-card">
+  <img src="../public/images/skinset.png"/>
+ <div class="product-content">
+    <h3>Skin Care Set</h3>
+    <p> Upcoming prices €15 / £12</p>
+    
+ </div>
+</div>
+
+      <!-- p4-->
+   <div class= "product-card">
+   <img src="../public/images/eyeshadow.png" />
+ <div class="product-content">
+  <h3>Eyeshadows</h3>
+    <p> Upcoming prices €15 / £12</p>
+
+ </div>
+</div>
+      <!-- p5-->
+   <div class= "product-card">
+ <img src="../public/images/foundationsurface.png" />
+ <div class="product-content">
+  <h3>Foundation </h3>
+    <p> Upcoming prices €15 / £12</p>
+
+ </div>
+</div>
+      <!-- p6-->
+   <div class= "product-card">
+  <img src="../public/images/perfume.jpg"/>
+ <div class="product-content">
+  <h3>Perfume</h3>
+    <p> Upcoming prices €15 / £12</p>
+   
+ </div>
+</div>
+
+   </section>
+
+
+
+<!-- START OF MODAL -->
+ <!--modal for customer favourites -->
+ <section>
+<div class="Modal1 modal-sm">
+  <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+ View favourites
+</button>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Customer Favourites</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+       <div class="chart-container"> 2025 Findings
+<canvas class="customerchart"></canvas>
+
+       </div>
+       <div class="data-details">
+        <ul>
+          <li>Lipgloss <span class="percentage-data">30%</span></li>
+              <li>Mascara <span class="percentage-data">50%</span></li>
+                  <li>Blush <span class="percentage-data">80%</span></li>
+                      <li>Primer <span class="percentage-data">20%</span></li>
+                          <li>Eyebrow Promade <span class="percentage-data">10%</span></li>
+        </ul>
+        </div>
+</div>
+</div>
+</div>
+    </div>
+  </div>
+</div>
+</section>
+<!--END OF MODAL AND CHART DATA -->
+
+
+
+<!--API START -->
+<section>
+<div class="api-grid-container">
+   <h1> Our New Partner<strong> Maybelline</strong></h1>
+   <div class="api-content">
+{products.slice(0, 3).map(product => (
+  <div class="api-card">
+    <h3>{product.name}</h3>
+    <img src={product.api_featured_image} alt={product.api_featured_images} width="200" height="auto"/>
+    <a href={product.website_link} target="blank"> Visit site</a>
+    <p>{product.type} €/£{product.price}</p>
+</div>
+))}
+</div>
+</div>
+
+
+<div class="search-api-container">
+<form action="product_type" method="fetch">
+        <input type="text" id="products-api" class="search-bar" placeholder="Find other products here">
+        <button onclick="fetch">Search Products</button><br>
+      </form>
+      <script>
+
+
+
+      </script>
+
+
+
+
+
+
+      </div>
+
+<!-- 
+<script> 
+console.log("product")
+ fetch('http://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline')
+ .then(response => response.json())
+ .then(data => {console.log(data.api_featured
+ })
+
+
+ .catch(error =>{
+  console.error('Error:', error);
+ });
+  </script> -->
+
+
+
+</section>
+
+  <!-- END OF API-->
+
+
+ 
+
+
+
+
+
+  <!--accordion section -->
+  
+<!-- END OF CAROUSEL-->
+
+
+
+<!-- START OF ABOUT US -->
+ <section id="About">
+ <div class="about-heading">
+  <h1> About Us <i class="fa-solid fa-circle-info" style="color: #000000;"></i> </h1>
+  <p>Hello everyone, My name is Jessica Padden and I am the founder of the SurFACE</p>
+ </div>
+ <div class="about-container">
+  <section class="about">
+    <div class="about-vid">
+<video class="public/makeup vid3.mp4" src="makeup vid3.mp4" width="55%" height="50%"  loop autoplay muted></video>
+    </div>
+    <div>
+      <div class="about-info">
+        <h2>Find Your SurFACE & Glow Up</h2>
+        <p>Thank you for your interest in the SurFACE. At the SurFACE, we value and support our local customers.
+        This is why we are so excited to finally launch online!We are an animal cruelty free company and we use recycle materials for our product packages!</p>
+      </div>
+    
+  </section>
+
+
+<!-- end of about section-->
+
+
+
+<!--Team -->
+<div class="team-container">
+  <h2>Meet Our <strong>Team</strong></h2>
+  <div class="team-card">
+<div class="team-content">
+  <div class="team-image">
+    <img src="../images/leah.jpg" alt="team1" width="100%">
+    </div>
+    <div class="team-info">
+      <div class="team-name"> Leah </div>
+      <div class="team-role"> Marketing Manager</div>
+    </div>
+    <p class="team-background">Studied at UCD in Marketing been with the Surface for over 5 years now!</p>
+</div>
+
+
+<div class="team-card">
+<div class="team-content">
+  <div class="team-image">
+    <img src="../images/jason.jpg"  alt="team2"  width="100px" height="100px">
+    </div>
+    <div class="team-info">
+      <div class="team-name"> Jason </div>
+      <div class="team-role"> Sales Manager</div>
+    </div>
+    <p class="team-background">Studied at UCD in Sales Mangement and  been with the Surface for over 2 years now!</p>
+</div>
+  </div>
+
+  <div class="team-card">
+<div class="team-content">
+  <div class="team-image">
+    <img src="../images/yazhou.jpg"  alt="team3"  width="100px" height="100px">
+    </div>
+    <div class="team-info">
+      <div class="team-name"> Yazhou </div>
+      <div class="team-role"> Project Manager</div>
+    </div>
+    <p class="team-background">Studied at DCU in Web development has  been with the Surface for over 3 years now!</p>
+</div>
+
+</div>
+
+
+
+
+
+
+<!-- Contact Form -->
+ <section id="Contact" >
+  <form class="contact-form">
+    <h1>&#9990; Contact Us </h1>
+    <div class="form-group">
+      <form action="#" method="POST">
+Full Name*: <input type="text" name="name" placeholder="Place Name Here"><br>
+  <br> Email Address*:  <input type="email" name="email" placeholder="Place Email Address Here" required><br><br>
+   <label for="country">Country:</label><br>
+      <select id="country" name="country"><br>
+        <option value="Ireland">Ireland</option>
+        <option value="UK">UK</option>
+        <option value="France">France</option>
+      </select><br>
+
+
+      <label for="message">Message:</label><br>
+      <textarea id="message" name="message" cols="10" rows="4"></textarea><br><br>
+
+
+ 
+     <button type="submit">Send</button><br>
+      </form>
+</section>
+
+
+
+<!--reviews section -->
+<section id="Reviews">
+  <section class="reviews-container">
+  <h2 class="review-title">Customer Reviews</h2>
+  <div class="review-swiper container swiper">
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+ <!--Boostrap js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+ 
+ <!--swiper js -->
+ <script src="https://cdn.jsdelivr.net/npm/swiper@8.4.7/swiper-bundle.min.js"></script>
+
+
+ <!-- CDN FOR CHART.JS -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+  
+
+  
+  
+
+
+
+
+
+     
+
+
