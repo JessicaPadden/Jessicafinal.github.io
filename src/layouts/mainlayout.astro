@@ -1,0 +1,119 @@
+---
+
+const my_array =["1st of January "];
+const img=["images/Final.png"];
+
+const age= ["30"];
+
+// API //
+const API_URL = "http://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline";
+const response = await fetch(API_URL);
+const products= await response.json();
+
+
+//importing all styles//
+import "../styles/style.css";
+
+---
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+        <meta name="description" content=description />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--this project is based on astro file with html, css, js and bootstrap for the UCD assessment -->
+		<meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!--main image will be final.png to display logo and brand image this is based in the public folder and created by Jessica Padden -->
+    <meta property= "{Image}" content="images/Final.png" />
+    <!--naming the title to Surface so it can be identified -->
+      <title>SurFACE</title>
+
+    <!-- linking css -->
+     <link rel="stylesheet" href="../styles/style.css">
+    
+ 
+
+
+    <!--remixicons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/brands.min.css">
+
+  
+      <!--font awesome link for icons -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+    
+     <!-- surface js -->
+     <script src="../layouts/surface.js"></script>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+     
+    </head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!--Boostrap js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+ 
+ <!--swiper js -->
+ <script src="https://cdn.jsdelivr.net/npm/swiper@8.4.7/swiper-bundle.min.js"></script>
+
+
+ <!-- CDN FOR CHART.JS -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</body>
+</html>
