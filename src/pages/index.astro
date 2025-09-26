@@ -1,5 +1,5 @@
 ---
-
+//astro is similar to mark down on how it uses theses fences '---' this is also known as the front matter//
 const my_array =["1st of January "];
 const img=["images/Final.png"];
 
@@ -13,7 +13,12 @@ const products= await response.json();
 
 //importing all styles//
 import "../styles/style.css";
+import video from "C:\Web Development\Assessment UCD\public\makeup vid3.mp4";
+import Navbar from "./navbar.astro";
 
+import Mainlayout from "../layouts/mainlayout.astro";
+import Countdown from "../layouts/countdown.astro";
+import Reviews from "../components/reviews.astro";
 
 
 ---
@@ -36,8 +41,8 @@ import "../styles/style.css";
     <!-- linking css -->
      <link rel="stylesheet" href="../styles/style.css">
     
- 
-
+    <!-- linking Swiper -->
+      <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
 
     <!--remixicons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/brands.min.css">
@@ -49,121 +54,23 @@ import "../styles/style.css";
     
      <!-- surface js -->
      <script src="../layouts/surface.js"></script>
+     
+     <!--Boostrap 5 -->
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
      
     </head>
 <body>
+  
+  <!-- importing the navbar to as this is one page and does not conatin multple pages for a launch brand  -->
+  <Navbar />
 
-  <!-- BOOTSTRAP 5 MODIFYING -->
-   <nav class="navbar navbar-expand-md navbar-dark bg-dark" style="background-color:rgb(230, 75, 209);" >
-  <div class="container-fluid">
-     <a class="navbar-brand" href="#">
-      <img src="Jessicafinal.github.io/images/Final.png" alt="Logo" width="30" height="auto" class="d-inline-block align-text-top">SurFACE</a>
-      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-label="Expanding Navbar"> <span class="narbar-toggler-icon"></span></button>
-      <div class="collapse navbar-collapse" id="navbar">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-<li class="navbar-item">
-<a class="nav-link active" aria-current="page" href="#">Home</a>
-</li>
-          <li class="nav-item">
-          <a class="nav-link" href="#Products">Products<i class="fa-solid fa-gift" style="color: #ffffff;"></i></a>
-          </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#About">About <i class="fa-solid fa-circle-info" style="color: #ffffff;"></i></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#Contact">Contact<i class="fa-solid fa-phone" style="color: #ffffff;"></i></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#Reviews">Reviews<i class="fa-solid fa-star" style="color: #ffffff;"></i></a>
-        </li>
-      </ul>
-      </div>
-    </nav>
-
-<!-- end of navbar -->
+  <Mainlayout/ >
+  <Countdown />
+  </Mainlayout>
 
 
 
-
-  <!----main hero page -->
-  <section id="main page ">
-    <!--main text -->
-    <div class="main conatiner-fluid mt-2 px-3">
-  <div class="main-page-text">
-    <h1> Welcome to the
-      <span>SurFACE</span></h1>
-  <span>New Beauty Brand</span>
-  <p>We are an animal cruelty free and vegan beauty company based in Co. Mayo.
-</p>
-   
-    <span> Our mission</span>
-    <p> to make you feel beautiful in your own skin and this is how we got the inspiration from the brand name The SurFACE.
-    We have a range of new and upcoming beauty products and skin care products for all skin types!</p>
-
- <button type="button"
-onclick="document.getElementById('Launch date').innerHTML = new Date('January 1, 2026');">
-        <p>Click for Launch date </button>
-        <p id="Launch date"></p></div>
- 
-  </section>
-
-
-
- <!-- BOOTSRAP MODIFYING AS THE LAUNCH DATE IS NOT REPOSNIVE ON CSS ALONE WITH CHANGES AND ADJUSTMENTS -->
-  <div class="time-container-fluid ">Launching Soon!
-    <div class="launch-time">
-    <div>
-    <p id="days">00</p>
-    <span> Days</span>
-  </div>
-    <div>
-    <p id="hours">00</p>
-    <span> Hours</span>
-  </div>
-    <div>
-    <p id="minutes">00</p>
-    <span> Minutes</span>
-  </div>
-    <div>
-    <p id="seconds">00</p>
-    <span> Seconds</span>
-  </div>
-</div>
-<script>
-var countDownDate= new Date("Jan 1, 2026  00:00:00").getTime();
-var x = setInterval(function(){
-  var now = new Date().getTime();
-  var distance= countDownDate - now;
-
-
-  var days= Math.floor (distance / (1000 *60 *60 *24));
-  var hours= Math.floor ((distance % (1000 *60 *60 *24)) / (1000 *60 *60));
-  var minutes=Math.floor ((distance % (1000 *60 *60)) / (1000 *60));
-  var seconds= Math.floor ((distance % (1000 *60)) /1000);
-
-const el = document.getElementById("days").innerHTML = days;
-   document.getElementById("hours").innerHTML = hours;
-    document.getElementById("minutes").innerHTML = minutes;
-     document.getElementById("seconds").innerHTML = seconds;
-
-
-     if(distance <0){
-      clearInterval(x);
-  document.getElementById("days").innerHTML = 00;
-   document.getElementById("hours").innerHTML = 00;
-    document.getElementById("minutes").innerHTML = 00;
-     document.getElementById("seconds").innerHTML = 00;
-
-
-     }
-
-
-},1000);
-  </script>
-</div>
-  </div>
 
   <!--restyling product card to make them responsive-->
    <section id="Products">
@@ -280,48 +187,14 @@ const el = document.getElementById("days").innerHTML = days;
   <div class="api-card">
     <h3>{product.name}</h3>
     <img src={product.api_featured_image} alt={product.api_featured_images} width="200" height="auto"/>
-    <a href={product.website_link} target="blank"> Visit site</a>
+    <a href={product.website_link} target="blank"> Visit </a> 
     <p>{product.type} €/£{product.price}</p>
 </div>
-))}
+    )
+  )
+}
 </div>
 </div>
-
-
-<div class="search-api-container">
-<form action="product_type" method="fetch">
-        <input type="text" id="products-api" class="search-bar" placeholder="Find other products here">
-        <button onclick="fetch">Search Products</button><br>
-      </form>
-      <script>
-
-
-
-      </script>
-
-
-
-
-
-
-      </div>
-
-<!-- 
-<script> 
-console.log("product")
- fetch('http://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline')
- .then(response => response.json())
- .then(data => {console.log(data.api_featured
- })
-
-
- .catch(error =>{
-  console.error('Error:', error);
- });
-  </script> -->
-
-
-
 </section>
 
   <!-- END OF API-->
@@ -333,8 +206,153 @@ console.log("product")
 
 
 
-  <!--accordion section -->
-  
+
+   <!--accordion section -->
+<!-- reason for adding a B5 accordion is to make a repsonsive box that collapses and expands for all devices and is user friendly-->
+<!--section 1-->
+<section>
+
+<div class="accordion" id="sections">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="heading-1"> 
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#section-1" aria-expanded="true" aria-controls="section-1">
+       
+      Section 1:Dermatologist Reviews
+      </button>
+    </h2>
+         <!--asscociating content with the heading the class needs to state show for collapse, the parent is the id of sections to let bs now that this accordation is to be inside the one above -->
+        <div id="section-1" class="accordion-collapse, collapse show" aria-labelledby="heading-1" data-bs-parent="#sections">
+          <div class="accordion-body">
+     <div class="stars">
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <span> (500) </span></div>
+<p>"We  recommend these ingredients to boost your collagen and elasticilty in your skin</p>
+<h4>Research & Ingredients </h4>
+<ol>
+  <li>Aqua</li>
+  <li>Glycerin</li>
+   <li>Hyaluronic acid</li>
+    <li>Nicinamide</li>
+     <li>Collagen</li>
+      <li>SPF 50</li>
+      <img src="/Jessicafinal.github.io/public/images/skincare.png" width="100px">
+       <img src="/Jessicafinal.github.io/public/images/skinset.png" width="100px">
+</ol>
+          </div>
+      </div>
+    </div>
+
+
+
+
+    <!--section 2-->
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="heading-2">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#section-2" aria-expanded="false" aria-controls="section-2">
+        Section 2: Our Partners
+        </button>
+      </h2>
+      <div id="section-2" class="accordion-collapse collapse"
+      aria-labelledby="Section-2" data-bs-parent="#sections">
+        <div class="accordion-body">
+     <p>We are launching our business with a range of products and will be collaborating with Irish Make-up Artists such as.</p>
+   <ul>
+      <li><a href="https://ellaandjo.ie/" target="_blank" rel="noopener noreferrer">ELLA & JO</a></li>
+      <li><a href="https://kashbeauty.com/" target="_blank" rel="noopener noreferrer">KASH BEAUTY</a></li>
+      <li><a href="https://sosueme.ie/about-suzanne-jackson/" target="_blank" rel="noopener noreferrer">SOSU Cosmetics</a></li>
+      </ul>
+          </div>
+  </div>
+</div>
+
+
+    <!--section 3-->
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="heading-3">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#section-3" aria-expanded="false" aria-controls="section-3">
+        Section 3: Tutorials
+        </button>
+      </h2>
+ <div id="section-3" class="accordion-collapse collapse"
+      aria-labelledby="Section-3" data-bs-parent="#sections">
+        <div class="accordion-body">
+<iframe width="auto" height="auto" src="https://www.youtube.com/embed/j2y8jnmBgSg?list=PL-_qSuEl3UwFF4PAlFGhtizozZnAzBXm9" title="Find YOUR Contrast Level🤍🤎🖤Low, Medium &amp; High Contrast Makeup Explained ft. SHEGLAM"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="auto" height="auto" src="https://www.youtube.com/embed/n55z6Rk-NJU" title="ULTIMATE EVERYDAY MAKEUP TUTORIAL (only 15 mins! quick &amp; easy!)"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="auto" height="auto" src="https://www.youtube.com/embed/zY7FHOAjk_o" title="easy soft glam makeup"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<style>
+  .iframe{
+    margin:10px;
+    padding: min(5em, 8%);
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  </style>
+      </div>
+      </div>
+    </div>
+</div>
+      </section>
+      <!--END OF ACCORDION-->
+
+   <!--carousel -->
+    <section id="carousel">
+   <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <h2 style="color: rgb(230, 75, 209),font-weight: 600"> Our Models</h2>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="../public/images/picture2.jpg" class="d-block w-100 h-auto" alt="picture1">
+      <div class="carousel-caption d-none d-md-block">
+        <h1>Alicia</h1>
+        <h3>Using the new liquid eyeliner called Pink & Wink</h3>
+      </div>
+    </div>
+    <div class="carousel-item">
+     <img src="../public/images/picture3.jpg" class="d-block w-100 h-auto" alt="picture2">
+       <div class="carousel-caption d-none d-md-block">
+        <h1> Vanessa</h1>
+        <h3>Using the new eyeshadow pallete called FACE the Music</h3>
+      </div>
+    </div>
+   
+     <div class="carousel-item">
+     <img src="../public/images/picture4.jpg" class="d-block w-100 h-auto" alt="picture2">
+       <div class="carousel-caption d-none d-md-block">
+        <h1>Anatasia</h1>
+        <h3>Using our brand new liptisck and lipliner called Facing the Fire</h3>
+      </div>
+    </div>
+    </div>
+ 
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+   <style>
+   .carousel-item .img{
+  height: 60px !important;
+  width: 50px !important;
+}
+    </style>
+
+
+</section>
+
 <!-- END OF CAROUSEL-->
 
 
@@ -347,10 +365,6 @@ console.log("product")
  </div>
  <div class="about-container">
   <section class="about">
-    <div class="about-vid">
-<video class="public/makeup vid3.mp4" src="makeup vid3.mp4" width="55%" height="50%"  loop autoplay muted></video>
-    </div>
-    <div>
       <div class="about-info">
         <h2>Find Your SurFACE & Glow Up</h2>
         <p>Thank you for your interest in the SurFACE. At the SurFACE, we value and support our local customers.
@@ -365,25 +379,28 @@ console.log("product")
 
 
 <!--Team -->
+<section>
 <div class="team-container">
-  <h2>Meet Our <strong>Team</strong></h2>
+  </div>
+  <h2 style="color:rgb(230, 75, 209)" >Meet Our <strong>Team</strong></h2>
   <div class="team-card">
-<div class="team-content">
+  <div class="team-content">
   <div class="team-image">
-    <img src="Jessicafinal.github.io/images/leah.jpg" alt="team1" width="100%">
+    <img src="/Jessicafinal.github.io/images/leah.jpg" alt="team1" width="150px" height="150px">
     </div>
     <div class="team-info">
       <div class="team-name"> Leah </div>
       <div class="team-role"> Marketing Manager</div>
     </div>
     <p class="team-background">Studied at UCD in Marketing been with the Surface for over 5 years now!</p>
+    </div>
 </div>
 
 
 <div class="team-card">
 <div class="team-content">
   <div class="team-image">
-    <img src="Jessicafinal.github.io/images/jason.jpg"  alt="team2"  width="100px" height="100px">
+    <img src="Jessicafinal.github.io/images/jason.jpg"  alt="team2" width="100px" height="100px">
     </div>
     <div class="team-info">
       <div class="team-name"> Jason </div>
@@ -396,7 +413,7 @@ console.log("product")
   <div class="team-card">
 <div class="team-content">
   <div class="team-image">
-    <img src="Jessicafinal.github.io/images/yazhou.jpg"  alt="team3"  width="100px" height="100px">
+    <img src="Jessicafinal.github.io/images/yazhou.jpg"  alt="team3"  width="150px" height="150px">
     </div>
     <div class="team-info">
       <div class="team-name"> Yazhou </div>
@@ -404,22 +421,18 @@ console.log("product")
     </div>
     <p class="team-background">Studied at DCU in Web development has  been with the Surface for over 3 years now!</p>
 </div>
-
 </div>
+</section>
 
 
-
-
-
-
-<!-- Contact Form -->
+<!--Contact form start--> 
  <section id="Contact" >
   <form class="contact-form">
     <h1>&#9990; Contact Us </h1>
     <div class="form-group">
       <form action="#" method="POST">
 Full Name*: <input type="text" name="name" placeholder="Place Name Here"><br>
-  <br> Email Address*:  <input type="email" name="email" placeholder="Place Email Address Here" required><br><br>
+  <br> Email Address*:  <input type="email" name="email" placeholder=" Email Address Here" required><br><br>
    <label for="country">Country:</label><br>
       <select id="country" name="country"><br>
         <option value="Ireland">Ireland</option>
@@ -434,38 +447,168 @@ Full Name*: <input type="text" name="name" placeholder="Place Name Here"><br>
 
  
      <button type="submit">Send</button><br>
+      </div>
       </form>
 </section>
+<!--END OF CONTACT FORM-->
 
 
 
-<!--reviews section -->
+
+ 
+
+  <!-- REVIEW 2 SWIPER Please Note to drag reviews if you want to break auto loop-->
+    <!-- please aslo note this will be left in the index folder as the swiper will not import correctly -->
+
+  <!--reviews section -->
 <section id="Reviews">
   <section class="reviews-container">
-  <h2 class="review-title">Customer Reviews</h2>
+  <h2 class="review-title"  style="background-color:rgb(230, 75, 209), color:#ffff">Customer Reviews</h2>
   <div class="review-swiper container swiper">
+    <div class= "review-swiper-wrapper swiper-wrapper">
+      <!--customer 1 -->
+      <article class="review-card swiper-slide">
+       <img src="Jessicafinal.github.io/public/images/customer1.jpg" alt="customer1" class="review-img" width="350px" height="200px">
+       <h3 class="Review-name">Erin <br>35, Co. Mayo</br></h3>
+
+
+       <div class="rates">
+        <div class="stars">
+          <i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+        </div>
+       </div>
+
+
+       <p class="review-text">"I love the SurFACE, all the products are great and affordable. I am so excited when this the brand launches online"</p>
+      </article>
+
+
+
+
+<!--customer 2 -->
+        <article class="review-card swiper-slide">
+       <img src="Jessicafinal.github.io/public/images/customer2.jpg" alt="customer2" width="350px" height="200px">
+       <h3 class="Review-name">Michelle<br>27, Co.Galway</br></h3>
+
+
+       <div class="rates">
+        <div class="stars">
+          <i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+        </div>
+       </div>
+
+
+       <p class="review-text">"I found this hidden gem on my visit to Mayo, the skin serum they recommended was really good and now my skin is so smooth. 10/10 would recommend if you are living here"</p>
+      </article>
+
+
+<!--customer 3 -->
+        <article class="review-card swiper-slide">
+       <img src="Jessicafinal.github.io/public/images/customer3.jpg" alt="customer3" width="350px" height="200px">
+       <h3 class="Review-name">Orla<br>29, Co. Sligo</br></h3>
+
+
+       <div class="rates">
+        <div class="stars">
+          <i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+        </div>
+       </div>
+
+
+       <p class="review-text">"The staff are so helpful and the products are lovely. Great place to get gifts and bundles for any event"</p>
+      </article>
+
+
+
+
+      <!--customer 4 -->
+       <article class="review-card swiper-slide">
+       <img src="Jessicafinal.github.io/public/images/customer4.jpg" alt="customer4" width="350px" height="200px">
+       <h3 class="Review-name">Claire<br>19, Co.Dublin</br></h3>
+
+
+       <div class="rates">
+        <div class="stars">
+          <i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+        </div>
+       </div>
+
+
+       <p class="review-text">"Absolutley love this place and will be placing orders once they are launched for the online store"</p>
+      </article>
+    </div>
+  <!-- swiper pagination -->
+  <div class="swiper-pagination"></div>
+
+
+    <!-- swiper navigation buttons -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+      
+      
+
+ <script>
+  
+  //initialising swiper
+  const swiperReviews = new Swiper('.review-swiper', {
+  loop: true,
+  slidesPerView:'auto',
+  centeredSlides: 'auto',
+  speed: 700,
+  spaceBetween: 20,
+  grabCursor: true,
+  effect:'coverflow',
+  nextEl: '.swiper-button-next',
+  prevEl: '.swiper-button-prev',
+  coverflowEffec:{
+    rotate:-90,
+    depth: 500,
+    stretch:0,
+    modifier:1,
+  },
+
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+
+
+  autoplay:{
+    delay: 8000,
+    disableOnInteraction: true,
+  }
+
+
+
+
+});
+
+
+</script>
+
+
+
+
  
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
 
 
 
