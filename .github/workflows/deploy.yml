@@ -17,6 +17,7 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    working-directory: D:\Jessicafinal.github.io\dist\
     steps:
       - run: npm install 
       - run: npm run build
