@@ -18,8 +18,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - npm install 
-      - npm run build
+      - run: npm install 
+      - run: npm run build
       - name: Checkout your repository using git
         uses: actions/checkout@v4
       - name: Install, build, and upload your site
