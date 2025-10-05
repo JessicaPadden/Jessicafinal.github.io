@@ -12,7 +12,6 @@
     "astro": "^5.12.5"
   },
   "devDependencies": {
-    "gh-pages": "^6.3.0",
     "sass": "^1.89.2"
   },
   "dependencies": {
@@ -22,6 +21,7 @@
     "astro-bootstrap": "^0.7.2",
     "autoprefixer": "^10.4.21",
     "bootstrap": "^5.3.7",
-    "cssnano": "^7.1.0"
+    "cssnano": "^7.1.0",
+    "node": "^24.9.0"
   }
 }
