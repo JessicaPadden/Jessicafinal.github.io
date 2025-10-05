@@ -6,7 +6,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "deploy": "astro build && npx gh-pages -d dist"
+    "deploy": "astro build && echo> dist/.nojekyll npx gh-pages -d dist"
   },
   "dev dependencies": {
     "astro": "^5.12.5"
