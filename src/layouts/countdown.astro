@@ -1,5 +1,5 @@
 <!-- BOOTSRAP MODIFYING AS THE LAUNCH DATE IS NOT REPOSNIVE ON CSS ALONE WITH CHANGES AND ADJUSTMENTS -->
-  <div class="time-container-fluid ">Launching Soon!
+  <div class="time-container-fluid"> Launching Soon!
     <div class="launch-time">
     <div>
     <p id="days">00</p>
@@ -19,29 +19,32 @@
   </div>
 </div>
 <script>
+ //applying the new date for countdown and getiing the time//
 var countDownDate= new Date("Jan 1, 2026  00:00:00").getTime();
+//setting up teh function to grab the new date and calcualte how many days until the 1st of Jan from current time//
 var x = setInterval(function(){
   var now = new Date().getTime();
   var distance= countDownDate - now;
 
-
+//getting the js variable adn using math object to find the distance of days, hours, mins and secs//
   var days= Math.floor (distance / (1000 *60 *60 *24));
   var hours= Math.floor ((distance % (1000 *60 *60 *24)) / (1000 *60 *60));
   var minutes=Math.floor ((distance % (1000 *60 *60)) / (1000 *60));
   var seconds= Math.floor ((distance % (1000 *60)) /1000);
 
+  //setting the value doe the days, hours mins and secs and returning the id element//
 const el = document.getElementById("days").innerHTML = days;
    document.getElementById("hours").innerHTML = hours;
     document.getElementById("minutes").innerHTML = minutes;
      document.getElementById("seconds").innerHTML = seconds;
 
-
+//if the distance is 0 set the outcome to null as the distance is still conuting down from the current date (now)//
      if(distance <0){
       clearInterval(x);
-  document.getElementById("days").innerHTML = 00;
-   document.getElementById("hours").innerHTML = 00;
-    document.getElementById("minutes").innerHTML = 00;
-     document.getElementById("seconds").innerHTML = 00;
+  document.getElementById("days").innerHTML = null;
+   document.getElementById("hours").innerHTML = null;
+    document.getElementById("minutes").innerHTML = null;
+     document.getElementById("seconds").innerHTML = null;
 
 
      }
@@ -51,3 +54,4 @@ const el = document.getElementById("days").innerHTML = days;
   </script>
 </div>
   </div>
+

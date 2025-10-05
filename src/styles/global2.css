@@ -19,13 +19,14 @@ scroll-behavior: smooth;
 overflow-x:hidden;
 font-family: "Poppins";
 font-weight: 400;
+ justify-content: center;
+ text-align: center;
 color: var(--secondary-color);
 
 
 }
 
 body::before{
-    content: "XS";
     position:fixed;
     color: #ffff;
     font-size: 1.5rem;
@@ -47,10 +48,7 @@ body::before{
   padding: 0;
 
   }
-    body::before{
-        content: "SM";
-
-    }
+ 
 }
 
 @media(min-width: 570px){
@@ -61,10 +59,7 @@ body::before{
   padding: 0;
 
   }
-    body::before{
-        content: "MD";
-
-    }
+   
 }
 
 @media(min-width: 900px){
@@ -75,10 +70,7 @@ body::before{
   padding: 0;
 
   }
-    body::before{
-        content: "LG";
-
-    }
+   
 }
 
 @media(min-width: 1100px){
@@ -89,10 +81,9 @@ body::before{
   padding: 0;
 
   }
-    body::before{
-        content: "XL";
+    
 
-    }
+    
 }
 
 @media(min-width: 1500px){
@@ -103,10 +94,9 @@ body::before{
   padding: 0;
 
   }
-    body::before{
-        content: "xXL";
+    
 
-    }
+ 
 }
 
 /*all media styling to make old css more responsive*/
@@ -263,50 +253,13 @@ margin: 15px;
  
 }
 
-.offer-container{
- background-color: #ffff;
- width: 100%;
- height: auto;
- display:flex;
- flex-wrap:wrap;
- justify-content: center;
- color:var(--primary-color);
- font-weight: 400;
 
-}
-
-.offer-container h1{
-  font-style: italic;
-  color: var(--bs-primary-color);
-
-}
-
-.offer-container p{
-    font-size: clamp(15px, 2vw, 20px);
-  font-style: italic;
-  margin-top: 15%;
-  align-items: center;
-  margin: 20%;
-
-  justify-content: center;
-  text-align: center;
-  font-weight: 500;
-  color:var(--secondary-color);
-}
-
-
-
-.offer-container span{
-    font-weight: 900;
- color:var(--primary-color);
-}
 
 
 /* B5 container styles for timer */
 .time-container-fluid{
   background-color: var(--primary-color);
   border: 2px var(--secondary-color) inset;
-  justify-content: center;
 text-align: center;
   color: rgb(255, 255, 255);
     font-weight: bold;
@@ -524,7 +477,7 @@ color:rgb(230, 75, 209);
 .api-grid-container{
 justify-content: center;
 margin: auto;
-margin-top:3%;
+margin-top: 2%;
 margin-left: 20%;
 overflow-x: hidden;
 padding-right: 20%;
@@ -594,23 +547,22 @@ font-size: 1rem;
 .accordion {
 padding: 15px;
 display: block;
-margin-bottom: 10%;
+margin-top: 15%;
 margin:0;
 max-width: 100%;
 width: 100%;
-color: var(--primary-color);
+color: var(--secondary-color);
+background-color:var(--primary-color);
 
 }
 
 .accordian-body{
 display: flex;
- text-align: center;
- justify-content: center;
+ list-style: none;
 
 
 }
 .accordion-header{
-text-align: center;
 margin-bottom: 20px;
 
 }

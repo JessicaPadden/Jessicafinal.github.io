@@ -1,12 +1,9 @@
 ---
 //astro is similar to mark down on how it uses theses fences '---' this is also known as the front matter//
-const my_array =["1st of January "];
-const img=["images/Final.png"];
-
 
 //importing all styles//
-import "../styles/style.css";
-import Navbar from "./navbar.astro";
+import "../styles/global2.css";
+import Navbar from "../pages/navbar.astro";
 
 import Mainlayout from "../layouts/mainlayout.astro";
 import Countdown from "../layouts/countdown.astro";
@@ -20,10 +17,8 @@ import Contact from "../pages/contact.astro";
 import Carousel from "../components/carousel.astro";
 import Footer from "../pages/footer.astro";
 
-
-
 ---
-
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
@@ -39,8 +34,8 @@ import Footer from "../pages/footer.astro";
     <!--naming the title to Surface so it can be identified -->
       <title>SurFACE</title>
 
-    <!-- linking css -->
-     <link rel="stylesheet" href="../styles/style.css">
+        <!-- linking css -->
+     <link rel="stylesheet" href="../styles/global2.css">
     
     <!-- linking Swiper -->
       <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
@@ -226,7 +221,16 @@ import Footer from "../pages/footer.astro";
 </script>
 
 
+
+
+
+
+
+
  </main>
+ 
+
+
  
     <Footer />
 

@@ -1,0 +1,92 @@
+---
+
+interface product{
+   name: string;
+}
+const API_URL = "http://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline";
+
+//fetching the const url which provides the json//
+const response = await fetch(API_URL);
+
+//gathering all data//
+const products= await response.json();
+
+---
+
+<!--API START -->
+<!--taking list of products from the original api (fetching the api link) and diplaying only 3 of them by using slice (js) which is all placed on a container-->
+
+<section>
+<div class="api-grid-container">
+   <h1> Our New Partner<strong> Maybelline</strong></h1>
+   <div class="api-content">
+{products.slice(0, 3).map(product=> (
+  <div class="api-card">
+    <h3>{product.name}</h3>
+    <img src={product.api_featured_image} alt={product.api_featured_images} width="200px" height="auto" alt="api-images"/>
+    <a href={product.website_link} target="blank"> Visit </a> 
+    <p>{product.type} €/£{product.price}</p>
+</div>
+    )
+  )
+}
+</div>
+</div>
+</section>
+
+  <!-- END OF API-->
+
+
+
+
+
+
+
+<!-- FETCHING ON CONSOLE ONLY -->
+
+<script>
+
+  //fetching returns the promise calling it and to return a value//
+
+ fetch('https://makeup-api.herokuapp.com/api/v1/products.json?product_type=mascara')
+.then((res)  => 
+
+  //looking at the body for readable stream in the console  console.log(res); = returning the promise of the json and converting it to the json format //
+ res.json())
+
+//once the first .then is fullfilled then data should appear with an array of objects//
+.then((data) => console.log(data));
+
+const data={
+  brand:"this is the brand",
+  name: "this is the brand name",
+  id: 1025
+}
+
+
+
+
+
+fetch ('https://makeup-api.herokuapp.com/api/v1/products.json?product_type=mascara', {
+
+method:"GET",
+body: JSON.stringify(data),
+headers: {
+  "Content-type": "brand/json"
+}
+
+})
+
+.then(res => res.json())
+
+.then(data => console.log(data))
+
+
+</script>
+
+
+
+
+
+
+ 
