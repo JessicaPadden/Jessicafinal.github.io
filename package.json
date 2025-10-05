@@ -11,12 +11,14 @@
     "astro": "^5.12.5"
   },
   "devDependencies": {
+    "prettier": "3.6.2",
+    "prettier-plugin-astro": "0.14.1",
     "sass": "^1.89.2"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
     "@types/bootstrap": "^5.2.10",
-    "astro": "^5.12.8",
+    "astro": "^5.14.1",
     "astro-bootstrap": "^0.7.2",
     "autoprefixer": "^10.4.21",
     "bootstrap": "^5.3.7",
