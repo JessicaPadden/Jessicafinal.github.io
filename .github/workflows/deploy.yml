@@ -1,4 +1,4 @@
-name: Deploy Astro site to GitHub Pages
+name: Deploy Astro
 
 on:
   # Trigger the workflow every time you push to the `main` branch
