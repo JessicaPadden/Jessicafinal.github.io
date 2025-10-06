@@ -7,7 +7,7 @@
 
 - [Navbar](#Navbar)
 
-- [MainLayout](#Main Layout)
+- [MainLayout](#MainLayout)
 
 - [Countdown](#Countdown)
 
