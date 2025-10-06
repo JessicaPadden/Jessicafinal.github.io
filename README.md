@@ -122,11 +122,11 @@ I would also like to thank UCD and a big thank you to our lecturer for all of hi
 
 - [UCD] (https://www.ucd.ie/professionalacademy/)
 
-- [W3Schools](https://www.w3schools.com/)
+- [W3Schools] (https://www.w3schools.com/)
 
 - [Chart.js] (https://www.chartjs.org/)
 
-- [YouTube](https://www.youtube.com/)
+- [YouTube] (https://www.youtube.com/)
 
 - [Modzilla] (https://developer.mozilla.org/en-US/)
 
