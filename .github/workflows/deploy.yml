@@ -1,8 +1,8 @@
 name: Deploy to GitHub Pages
 
 on:
-  # Trigger the workflow every time you push to the `main` branch
-  # Using a different branch name? Replace `main` with your branch’s name
+  Trigger the workflow every time you push to the `The-SurFACE` branch
+  Using a different branch name? Replace `The-SurFACE` with your branch’s name
   push:
     branches: [ The-SurFACE ]
   # Allows you to run this workflow manually from the Actions tab on GitHub.
