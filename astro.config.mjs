@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config'
 
 export default defineConfig({
-  site: 'https://JessicaPadden.github.io/',
+  site: 'https://github.com/JessicaPadden/Jessicafinal',
   base: '/Jessicafinal/',
   output: "static"
 });
