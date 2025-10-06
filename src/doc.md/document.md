@@ -19,7 +19,7 @@
 
 - [Modal](#Modal)
 
-- [AboutUs](#About Us)
+- [AboutUs](#About-Us)
 
 - [Carousel](#Caraousel)
 
