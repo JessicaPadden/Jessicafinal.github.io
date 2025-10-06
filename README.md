@@ -33,7 +33,7 @@
 
 - By doing this project, I completed my greatest efforts for this project and made it accessible and as user-friendly as possible.
 
-- [Project] https://github.com/JessicaPadden/Jessicafinal.github.io
+- [Project] https://github.com/JessicaPadden/Jessicafinal
 
  
 
